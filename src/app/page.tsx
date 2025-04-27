@@ -216,7 +216,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-16 gradient-text">✨ Our Platform Includes:</h2>
           
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-3 gap-10 mb-20">
             {/* Student Dashboard */}
             <div className="glass-card p-8 animate-slideUp" style={{animationDelay: "0.1s"}}>
               <h3 className="text-2xl font-bold mb-4 gradient-text">🎓 Student Dashboard</h3>
@@ -266,12 +266,130 @@ export default function Home() {
                 <li className="flex items-start">
                   <span className="text-purple-400 mr-2">✓</span>
                   <strong className="gradient-text font-medium">Add and manage teachers</strong>, create accounts
-          </li>
+                </li>
                 <li className="flex items-start">
                   <span className="text-purple-400 mr-2">✓</span>
                   <strong className="gradient-text font-medium">Edit or remove courses</strong>, monitor platform activity
-          </li>
+                </li>
               </ul>
+            </div>
+          </div>
+          
+          {/* Popular Courses Section */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center mb-10 gradient-text">🔥 Popular Courses</h3>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Course Card 1 */}
+              <div className="glass-card overflow-hidden group animate-slideUp" style={{animationDelay: "0.1s"}}>
+                <div className="relative">
+                  <div className="h-48 bg-gradient-to-r from-pink-500/30 to-purple-600/30 relative overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-4xl">📱</span>
+                    </div>
+                  </div>
+                  <div className="absolute top-3 right-3 bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    Best Seller
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs text-pink-500 font-medium">Advanced</span>
+                    <div className="flex items-center">
+                      <span className="text-yellow-500 mr-1">★★★★★</span>
+                      <span className="text-xs text-gray-400">(1,245)</span>
+                    </div>
+                  </div>
+                  
+                  <h4 className="text-xl font-bold mb-2 gradient-text">Mobile App Development</h4>
+                  <p className="text-sm text-gray-400 mb-4">Learn to create professional mobile applications for iOS and Android using React Native.</p>
+                  
+                  <div className="flex items-center justify-between">
+                    <span className="text-xl font-bold gradient-text">$89.99</span>
+                    <button className="text-xs bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 text-white px-4 py-2 rounded-md transition-all">
+                      Enroll Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Course Card 2 */}
+              <div className="glass-card overflow-hidden group animate-slideUp" style={{animationDelay: "0.2s"}}>
+                <div className="relative">
+                  <div className="h-48 bg-gradient-to-r from-indigo-500/30 to-cyan-500/30 relative overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-4xl">💻</span>
+                    </div>
+                  </div>
+                  <div className="absolute top-3 right-3 bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    New
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs text-indigo-400 font-medium">Intermediate</span>
+                    <div className="flex items-center">
+                      <span className="text-yellow-500 mr-1">★★★★☆</span>
+                      <span className="text-xs text-gray-400">(748)</span>
+                    </div>
+                  </div>
+                  
+                  <h4 className="text-xl font-bold mb-2 gradient-text">Web Development Bootcamp</h4>
+                  <p className="text-sm text-gray-400 mb-4">Complete web development course covering HTML, CSS, JavaScript, React, Node, and more.</p>
+                  
+                  <div className="flex items-center justify-between">
+                    <span className="text-xl font-bold gradient-text">$129.99</span>
+                    <button className="text-xs bg-gradient-to-r from-indigo-600 to-cyan-600 hover:opacity-90 text-white px-4 py-2 rounded-md transition-all">
+                      Enroll Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Course Card 3 */}
+              <div className="glass-card overflow-hidden group animate-slideUp" style={{animationDelay: "0.3s"}}>
+                <div className="relative">
+                  <div className="h-48 bg-gradient-to-r from-purple-500/30 to-pink-500/30 relative overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-4xl">🎨</span>
+                    </div>
+                  </div>
+                  <div className="absolute top-3 right-3 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    Popular
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs text-purple-400 font-medium">All Levels</span>
+                    <div className="flex items-center">
+                      <span className="text-yellow-500 mr-1">★★★★★</span>
+                      <span className="text-xs text-gray-400">(954)</span>
+                    </div>
+                  </div>
+                  
+                  <h4 className="text-xl font-bold mb-2 gradient-text">UI/UX Design Masterclass</h4>
+                  <p className="text-sm text-gray-400 mb-4">Master the principles of user interface and experience design with industry-standard tools.</p>
+                  
+                  <div className="flex items-center justify-between">
+                    <span className="text-xl font-bold gradient-text">$99.99</span>
+                    <button className="text-xs bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white px-4 py-2 rounded-md transition-all">
+                      Enroll Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-center mt-10">
+              <Link href="/courses" className="inline-flex items-center text-pink-500 hover:text-pink-400 font-medium">
+                View All Courses 
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
