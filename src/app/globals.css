@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --chocolate-primary: #7B3F00;
+  --chocolate-secondary: #5C2E00;
+  --chocolate-light: #9B6C38;
+  --chocolate-accent: #D2691E;
+  --chocolate-hover: #8B4513;
+  --dark-bg-primary: #121212;
+  --dark-bg-secondary: #1E1E1E;
+  --dark-bg-tertiary: #282828;
+  --dark-text-primary: #E0E0E0;
+  --dark-text-secondary: #AAAAAA;
+  --dark-border: #333333;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark-text-primary);
+  background-color: var(--dark-bg-primary);
+}
+
+.dark-card {
+  background-color: var(--dark-bg-secondary);
+  border-color: var(--dark-border);
+}
+
+.chocolate-btn {
+  background-color: var(--chocolate-primary);
+  color: white;
+}
+
+.chocolate-btn:hover {
+  background-color: var(--chocolate-hover);
+}
+
+.chocolate-text {
+  color: var(--chocolate-accent);
+}
+
+.dark-gradient {
+  background: linear-gradient(to right, var(--chocolate-secondary), var(--chocolate-primary));
+}
+
+/* Improve contrast for inputs in dark theme */
+input, select, textarea {
+  background-color: var(--dark-bg-tertiary);
+  color: var(--dark-text-primary);
+  border-color: var(--dark-border);
+}
+
+/* Chocolate buttons */
+.btn-chocolate {
+  background-color: var(--chocolate-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-chocolate:hover {
+  background-color: var(--chocolate-secondary);
+}
+
+.btn-chocolate-outline {
+  background-color: transparent;
+  border: 1px solid var(--chocolate-primary);
+  color: var(--chocolate-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-chocolate-outline:hover {
+  background-color: var(--chocolate-primary);
+  color: white;
+}
+
+/* Dark themed inputs */
+input, textarea, select {
+  background-color: var(--dark-bg-tertiary);
+  border: 1px solid var(--dark-border);
+  color: var(--dark-text-primary);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--chocolate-primary);
+  outline: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@layer utilities {
+  .dark-gradient {
+    background: linear-gradient(to right, #7B3F00, #D2691E);
+  }
+  
+  .glass-effect {
+    background: rgba(40, 40, 40, 0.25);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-card {
+    background: rgba(40, 40, 40, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(210, 105, 30, 0.3);
+  }
+  
+  .price-card {
+    background: linear-gradient(45deg, rgba(123, 63, 0, 0.7), rgba(210, 105, 30, 0.7));
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .price-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    border-radius: 16px;
+    z-index: -1;
+  }
+  
+  .price-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .animate-slideUp {
+    animation: slideUp 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 10px rgba(210, 105, 30, 0.5);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(90deg, #D2691E, #FFB347);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
