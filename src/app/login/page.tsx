@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Navbar from "../components/Navbar";
 
 export default function Login() {
   const router = useRouter();
@@ -54,6 +55,7 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#0f0014] relative overflow-hidden">
+      <Navbar />
       {/* Decorative Gradient Orbs */}
       <div className="fixed w-[500px] h-[500px] rounded-full bg-gradient-to-r from-[#ff2c9c] to-[#9b4fb8] opacity-10 blur-[100px] -top-60 -left-60 z-0"></div>
       <div className="fixed w-[600px] h-[600px] rounded-full bg-gradient-to-r from-[#6f38c5] to-[#ff2c9c] opacity-10 blur-[120px] -bottom-80 -right-80 z-0"></div>
