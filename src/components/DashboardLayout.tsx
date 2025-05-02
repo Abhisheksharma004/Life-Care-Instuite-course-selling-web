@@ -32,6 +32,16 @@ const NavLink = ({ href, icon, children, isMobile, onClick }: NavLinkProps) => {
   );
 };
 
+const SidebarProfile = ({ userName, roleName, roleColor }: { userName: string; roleName: string; roleColor: string }) => (
+  <div className="flex flex-col items-center py-8 px-4">
+    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500/60 to-purple-600/60 flex items-center justify-center text-3xl text-white font-bold shadow-lg mb-3">
+      {userName.split(' ').map(w => w[0]).join('').slice(0,2)}
+    </div>
+    <div className="text-lg font-semibold text-white mb-1">{userName}</div>
+    <div className={`px-2 py-0.5 rounded text-xs font-medium text-white ${roleColor}`}>{roleName}</div>
+  </div>
+);
+
 type DashboardLayoutProps = {
   children: ReactNode;
   userRole: "student" | "teacher" | "admin";
@@ -172,12 +182,24 @@ export default function DashboardLayout({
       {/* Main content */}
       <div className="flex-1 flex overflow-hidden">
         {/* Sidebar */}
-        <div className="hidden md:flex md:flex-shrink-0 bg-[#1E1E1E] border-r border-[#333333]">
-          <div className="w-64 flex flex-col">
-            <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-              <nav className="flex-1 px-2 space-y-1">
-                {roleNavLinks}
-              </nav>
+        <div className="hidden md:flex md:flex-shrink-0 bg-[#18122B] bg-opacity-80 backdrop-blur-xl border-r border-[#333333] shadow-xl relative">
+          <div className="w-64 flex flex-col h-full">
+            <SidebarProfile userName={userName} roleName={roleName} roleColor={roleColor} />
+            <nav className="flex-1 px-2 space-y-1 mt-2">
+              {roleNavLinks}
+            </nav>
+            <div className="absolute bottom-0 left-0 w-full px-4 pb-6 pt-4 border-t border-[#333333] bg-[#18122B] bg-opacity-80">
+              <Link href="/" className="flex items-center gap-2 px-3 py-2 rounded-lg text-[#E0E0E0] hover:bg-gradient-to-r hover:from-pink-600 hover:to-purple-600 hover:text-white transition mb-2">
+                <span className="text-xl">🏠</span>
+                <span>View Website</span>
+              </Link>
+              <button 
+                onClick={handleLogout}
+                className="flex items-center gap-2 w-full px-3 py-2 rounded-lg border border-pink-600 text-pink-500 hover:bg-pink-600 hover:text-white transition font-semibold"
+              >
+                <span className="text-xl">🚪</span>
+                <span>Sign Out</span>
+              </button>
             </div>
           </div>
         </div>
@@ -189,4 +211,4 @@ export default function DashboardLayout({
       </div>
     </div>
   );
-} 
+}
